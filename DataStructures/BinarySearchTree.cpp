@@ -92,12 +92,6 @@ void BinarySearchTree::remove(int data)
 	
 }
 
-void BinarySearchTree::print()
-{
-	inorder(root);
-	cout << endl;
-}
-
 bool BinarySearchTree::isLeaf(Node * node)
 {
 	if (node->left == nullptr && node->right == nullptr)
