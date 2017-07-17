@@ -12,7 +12,6 @@ struct Node
 
 	Node()
 	{
-		data = NULL;
 		next = nullptr;
 		previous = nullptr;
 	}
@@ -23,7 +22,6 @@ template <class T> class LinkedList
 public:
 	LinkedList<T>()
 	{
-		firstNode = new Node<T>();
 		count = 0;
 	}
 
@@ -63,7 +61,7 @@ public:
 		return listString;
 	};
 	
-	void addNode(T data)
+	void add(T data)
 	{
 		if (firstNode == nullptr)
 		{

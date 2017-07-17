@@ -5,7 +5,7 @@
 using namespace std;
 
 struct Item {
-	string name;
+	char name;
 	string phoneNumber;
 };
 
@@ -15,8 +15,12 @@ public:
 	Hashtable();
 	~Hashtable();
 
+	int hash(char *str);
+
+	void add(Item item);
+
 private:
 	
-	LinkedList<Item>* table[20];
+	LinkedList<Item>* table[26];
 };
 
