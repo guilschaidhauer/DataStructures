@@ -44,6 +44,19 @@ void Hashtable::add(Item item)
 	table[index]->add(item);
 }
 
+void Hashtable::remove(Item item)
+{
+	int index = hash(item.name);
+
+	if (index < 0 || index >= tableSize)
+		return;
+	
+	int listIndex = table[index]->getItemIndex(item);
+
+	if (listIndex != -1)
+		table[index]->removeAt(listIndex);
+}
+
 string Hashtable::toString()
 {
 	string prettyPrint = "";

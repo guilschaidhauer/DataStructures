@@ -20,6 +20,8 @@ int main()
 	myHashTable.add(item1);
 	myHashTable.add(item2);
 
+	myHashTable.remove(item2);
+
 	cout << myHashTable.toString() << endl;
 
 	system("pause");

@@ -15,6 +15,13 @@ struct Node
 		next = nullptr;
 		previous = nullptr;
 	}
+
+	inline bool operator==(Node a) {
+		if (a.data == data)
+			return true;
+		else
+			return false;
+	}
 };
 
 template <class T> class LinkedList
@@ -94,16 +101,31 @@ public:
 			Node<T> *focus;
 			focus = firstNode;
 
-			for (int i = 0; i < index; i++)
+			if (index == 0)
 			{
-				focus = focus->next;
+				if (focus->next != nullptr)
+				{
+					focus->next->previous = nullptr;
+					firstNode = focus->next;
+				}
+				else
+				{
+					firstNode = nullptr;
+				}
 			}
+			else
+			{
+				for (int i = 0; i < index; i++)
+				{
+					focus = focus->next;
+				}
 
-			if (focus->previous != nullptr)
-				focus->previous->next = focus->next;
+				if (focus->previous != nullptr)
+					focus->previous->next = focus->next;
 
-			if (focus->next != nullptr)
-				focus->next->previous = focus->previous;
+				if (focus->next != nullptr)
+					focus->next->previous = focus->previous;
+			}
 
 			count--;
 		}
@@ -124,6 +146,25 @@ public:
 			return focus->data;
 		}
 	};
+
+	int getItemIndex(T item)
+	{
+		if (count <= 0)
+			return -1;
+
+		Node<T> *focus;
+		focus = firstNode;
+
+		for (int i = 0; i < count; i++)
+		{
+			if (item == focus->data)
+				return i;
+
+			focus = focus->next;
+		}
+
+		return -1;
+	}
 
 	int size() { return count; };
 
