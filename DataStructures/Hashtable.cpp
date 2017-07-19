@@ -15,14 +15,24 @@ Hashtable::~Hashtable()
 {
 }
 
-//Very simple hash function that returns the value of the first char in an int. Used only for testing purposes.
+//Very simple hash function.
 //See this like for better hash functions.
 //http://www.cse.yorku.ca/~oz/hash.html
-int Hashtable::hash(char * str)
+int Hashtable::hash(string str)
 {
-	int index = str[0] - '0';
+	int index = 0;
+	
+	char * charStr = new char[str.size() + 1];
+	std::copy(str.begin(), str.end(), charStr);
+	charStr[str.size()] = '\0';
 
-	return index;
+	for (int i = 0; i < str.size(); i++)
+	{
+		index += (int)charStr[i];
+	}
+
+	delete[] charStr;
+	return index % 26;
 }
 
 void Hashtable::add(Item item)

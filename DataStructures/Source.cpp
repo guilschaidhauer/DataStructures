@@ -8,10 +8,9 @@ using namespace std;
 int main()
 {
 	Hashtable myHashTable;
+	string myString = "55519999999";
 
-	char myChar = '5';
-
-	cout << myHashTable.hash(&myChar) << endl;
+	cout << myHashTable.hash(myString) << endl;
 
 	system("pause");
 	return 0;

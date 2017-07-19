@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include "LinkedList.h"
 #include <string>
 
@@ -15,7 +16,7 @@ public:
 	Hashtable();
 	~Hashtable();
 
-	int hash(char *str);
+	int hash(string str);
 
 	void add(Item item);
 
