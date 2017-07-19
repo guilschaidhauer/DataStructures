@@ -63,7 +63,7 @@ public:
 	
 	void add(T data)
 	{
-		if (firstNode == nullptr)
+		if (count == 0)
 		{
 			firstNode = new Node<T>();
 			firstNode->data = data;
@@ -123,8 +123,6 @@ public:
 
 			return focus->data;
 		}
-
-		return NULL;
 	};
 
 	int size() { return count; };

@@ -8,9 +8,19 @@ using namespace std;
 int main()
 {
 	Hashtable myHashTable;
-	string myString = "55519999999";
+	
+	Item item1;
+	item1.name = "Guilherme";
+	item1.phoneNumber = "1234";
 
-	cout << myHashTable.hash(myString) << endl;
+	Item item2;
+	item2.name = "Guilherme";
+	item2.phoneNumber = "5678";
+
+	myHashTable.add(item1);
+	myHashTable.add(item2);
+
+	cout << myHashTable.toString() << endl;
 
 	system("pause");
 	return 0;

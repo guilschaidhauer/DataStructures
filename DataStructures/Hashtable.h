@@ -1,12 +1,13 @@
 #pragma once
-#include <iostream>
 #include "LinkedList.h"
 #include <string>
+
+#define tableSize 26
 
 using namespace std;
 
 struct Item {
-	char name;
+	string name;
 	string phoneNumber;
 };
 
@@ -17,11 +18,11 @@ public:
 	~Hashtable();
 
 	int hash(string str);
-
 	void add(Item item);
+	string toString();
 
 private:
 	
-	LinkedList<Item>* table[26];
+	LinkedList<Item>* table[tableSize];
 };
 

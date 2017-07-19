@@ -1,10 +1,9 @@
 #include "Hashtable.h"
 
 
-
 Hashtable::Hashtable()
 {
-	for (int i = 0; i < 26; i++)
+	for (int i = 0; i < tableSize; i++)
 	{
 		table[i] = new LinkedList<Item>();
 	}
@@ -16,7 +15,7 @@ Hashtable::~Hashtable()
 }
 
 //Very simple hash function.
-//See this like for better hash functions.
+//See this link for better hash functions.
 //http://www.cse.yorku.ca/~oz/hash.html
 int Hashtable::hash(string str)
 {
@@ -32,10 +31,36 @@ int Hashtable::hash(string str)
 	}
 
 	delete[] charStr;
-	return index % 26;
+	return index % (tableSize - 1);
 }
 
 void Hashtable::add(Item item)
 {
+	int index = hash(item.name);
 
+	if (index < 0 || index >= tableSize)
+		return;
+
+	table[index]->add(item);
+}
+
+string Hashtable::toString()
+{
+	string prettyPrint = "";
+
+	for (int i = 0; i < tableSize; i++)
+	{
+		prettyPrint += std::to_string(i) + "-";
+		for (int j = 0; j < table[i]->size(); j++)
+		{
+			prettyPrint += table[i]->getAt(j).name + " " + table[i]->getAt(j).phoneNumber;
+				
+			if (j != table[i]->size() - 1)
+				prettyPrint += " ||| ";
+		}
+
+		prettyPrint += "\n";
+	}
+
+	return prettyPrint;
 }
