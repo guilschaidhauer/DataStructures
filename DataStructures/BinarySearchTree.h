@@ -31,8 +31,6 @@ public:
 	Node* search(int data, Node *node);
 	Node* findSmallest(Node *node);
 
-	void print();
-
 private:
 	Node *root;
 

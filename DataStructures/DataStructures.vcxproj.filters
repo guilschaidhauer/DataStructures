@@ -18,10 +18,10 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LinkedList.cpp">
+    <ClCompile Include="BinarySearchTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BinarySearchTree.cpp">
+    <ClCompile Include="Hashtable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,6 +30,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BinarySearchTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hashtable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

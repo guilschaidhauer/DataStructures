@@ -1,31 +1,28 @@
 #include <iostream>
-//#include "LinkedList.h"
-#include "BinarySearchTree.h"
+#include "LinkedList.h"
+//#include "BinarySearchTree.h"
+#include "Hashtable.h"
 
 using namespace std;
 
 int main()
 {
-	BinarySearchTree myBST;
+	Hashtable myHashTable;
+	
+	Item item1;
+	item1.name = "Guilherme";
+	item1.phoneNumber = "1234";
 
-	myBST.add(50);
-	myBST.add(30);
-	myBST.add(70);
-	myBST.add(20);
-	myBST.add(40);
-	myBST.add(32);
-	myBST.add(34);
-	myBST.add(36);
-	myBST.add(60);
-	myBST.add(65);
-	myBST.add(80);
-	myBST.add(75);
-	myBST.add(85);
+	Item item2;
+	item2.name = "Guilherme";
+	item2.phoneNumber = "5678";
 
-	myBST.print();
+	myHashTable.add(item1);
+	myHashTable.add(item2);
 
-	myBST.remove(70);
-	myBST.print();
+	myHashTable.remove(item2);
+
+	cout << myHashTable.toString() << endl;
 
 	system("pause");
 	return 0;
