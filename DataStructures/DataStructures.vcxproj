@@ -110,11 +110,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Algorithm.cpp" />
     <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="Hashtable.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algorithm.h" />
     <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="Hashtable.h" />
     <ClInclude Include="LinkedList.h" />
